@@ -12,8 +12,13 @@ public class ProjectService {
 	
 	public Project saveOrUpdate(Project project) {
 		
+		try {
+			project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
 		return projectrespoistory.save(project);
-	
+		}
+		catch(Exception exp) {
+			throw new ProjectIdExeption("Project ID '"+project.getProjectIdentifier().toUpperCase()+"' already exists");
+		}
 	}
 	
 	
