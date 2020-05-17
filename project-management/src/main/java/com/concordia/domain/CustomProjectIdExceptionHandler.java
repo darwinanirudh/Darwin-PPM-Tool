@@ -12,7 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 public class CustomProjectIdExceptionHandler {
  
 	@ExceptionHandler
-	public final ResponseEntity<Object> handleProjectIdException(ProjectIdExeption exp,WebRequest request){
+	public final ResponseEntity<Object> handleProjectIdException(ProjectIdException exp,WebRequest request){
 		
 		
 		ProjectIdExceptionResponse projIdExpResponse = new ProjectIdExceptionResponse(exp.getMessage());
